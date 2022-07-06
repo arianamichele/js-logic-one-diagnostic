@@ -32,14 +32,16 @@ Question 2
 Finish the function. Using the string that is passed in return the number of how many vowels occur.
 */
 const vowelCount = (str) => {
-	const vowels = ["a", "e", "i", "o", "u"]
-	let counter = 0
-	for (let letter of str.toLowerCase()) {
-		if (vowels.includes(letters)) {
-		counter ++}
-	}
-	//console.log(`The text contains ${counter} vowel(s)`)
-	return counter
+	const vowels = ['a', 'e', 'i', 'o', 'u']
+	let strArr = str.split('')
+	let count = 0
+	strArr.forEach((char) => {
+		if (vowels.includes(char)) {
+			count += 1
+		}
+	})
+
+	return count
 }
 
 /*
@@ -59,7 +61,7 @@ Ex: If the string that is passed in is `hey there person` the return value shoul
 // 	}
 // 	return str;
 
-const stringReverse = (str) => str.split("").map((word) => (word.length >= 5) ? word.split("").reverse().join("") : word).join("");
+const stringReverse = (str) => str.split(" ").map((word) => (word.length >= 5) ? word.split("").reverse().join("") : word).join(" ");
 	
 module.exports = {
 	sumOfNumbers,
